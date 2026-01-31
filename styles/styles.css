@@ -1,39 +1,129 @@
-*
-{
+html, body {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-align: center;
+    overflow: hidden;
 }
 
-button.btn.btn-primary
-{
-    cursor: pointer;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
+body {
+    background-color: #ffafbd;
+    background-image: linear-gradient(45deg, #ffafbd 0%, #CBC3E3 100%);
+    font-family: 'Quicksand', sans-serif;
+    color: #5E548E;
 }
 
 .main-content {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
+    padding: 20px;
 }
 
-h1 {
+.valentine-card {
+    background: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.9); 
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    max-width: 500px;
+}
+
+.valentine-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
     margin-bottom: 20px;
 }
 
-.button-group {
-    display: flex;
-    gap: 10px;
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+    color: #d63384;
+    line-height: 1.2;
 }
 
-#cute-cat {
-    max-width: 100%;
-    height: 300px;
-    border-radius: 10%;
+.valentine-card p {
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    padding: 0 10px;
 }
 
+.cat-message {
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.btn-primary {
+    background-color: #8E7AB5 !important;
+    border: none !important;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(142, 122, 181, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background-color: #c1276d !important;
+}
+
+.btn-secondary {
+    background-color: #c1276d !important;
+    border: none !important;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(142, 122, 181, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    transform: scale(1.05);
+    background-color: #8E7AB5 !important;
+}
+
+/* Heart animation */
+.heart-particle {
+    position: fixed;
+    top: 100vh;
+    user-select: none;
+    pointer-events: none;
+    z-index: 10000;
+    animation: floatUp linear forwards; 
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    .valentine-card {
+        padding: 2rem 1.5rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .valentine-card p {
+        font-size: 1rem;
+    }
+}
